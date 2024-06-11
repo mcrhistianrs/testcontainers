@@ -24,10 +24,10 @@ describe('User service', () => {
             type: 'mysql',
             host: mysqlContainer.getHost(),
             port: mysqlContainer.getMappedPort(3306),
-            username: 'test',
-            password: 'test',
+            username: mysqlContainer.getUsername(),
+            password: mysqlContainer.getUserPassword(),
             synchronize: true,
-            database: 'test',
+            database: mysqlContainer.getDatabase(),
             entities: [User],
             logging: true
         });
